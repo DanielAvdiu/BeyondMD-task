@@ -28,9 +28,14 @@ def say_hello(request):
     return JsonResponse({'message': 'Hello, Django!'})
 
 def find_free(request):
+    query_params = request.GET
+    # Now you can access individual parameters like this:
+    param_value = request.GET.get('word', 'default_value')
+    print(param_value)
+
     url = "https://mashape-community-urban-dictionary.p.rapidapi.com/define"
 
-    querystring = {"term":"this"}
+    querystring = {"term":param_value}
 
     headers = {
 	    "X-RapidAPI-Key": "395845721dmsh6a40198214a94dbp119f11jsn5fc16ba16f43",
