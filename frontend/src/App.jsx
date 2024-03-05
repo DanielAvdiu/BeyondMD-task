@@ -3,6 +3,7 @@ import { Navbar } from "./components/Navbar";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Stories from "./pages/Stories";
+import Dictionary from "./pages/Dictionary";
 
 
 function App() {
@@ -12,8 +13,8 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/dictionary" element={<Dictionary />} />
           <Route path="/about" element={< About />} />
-          <Route path="/stories" element={<Stories />} />
         </Routes>
         
       </div>

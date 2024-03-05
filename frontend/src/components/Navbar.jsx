@@ -24,6 +24,10 @@ export const Navbar = () => {
                 </li>
 
                 <li>
+                    <NavLink to="/dictionary">Dictionary</NavLink>
+                </li>
+
+                <li>
                     <NavLink to="/about">About</NavLink>
                 </li>
 
