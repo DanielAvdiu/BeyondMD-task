@@ -3,11 +3,9 @@ import { useState, useEffect } from "react";
 const Dictionary = () => {
 
     const [word, setWord] = useState("");
-    const [data, setData] = useState({});
+    const [data, setData] = useState({ 'list': [] });
+    const [listdata, setListData] = useState([]);
 
-    useEffect(() => {
-        console.log("The word is: ", word);
-    }, [word]);
 
     {/* Here is the function that will be called when the search button is clicked. 
       The django server will be running and then we make the call to the server to get the
@@ -23,11 +21,12 @@ const Dictionary = () => {
         const urlWithParams = `${apiUrl}?word=${word}`;
 
         const makeCall = async () => {
-            await fetch(urlWithParams).then(response => response.json()).then(data => { setData(data); console.log(data); });
+            await fetch(urlWithParams).then(response => response.json()).then(data => { setData(data); setListData(data['list']); console.log(data); console.log(listdata) });
         };
 
         makeCall();
     };
+
 
     return (
         <>
@@ -37,7 +36,7 @@ const Dictionary = () => {
             */}
 
             <div className="flex flex-col items-center justify-center">
-                <div className="flex flex-col justify-center items-center border-solid border-4 py-5 w-screen">
+                <div className="flex flex-col justify-center items-center border-solid border-4 py-5 w-screen space-y-4">
                     <h1 className="text-3xl"> Dictionary - Search for a word </h1>
 
                     {/* Here is the search bar. */}
@@ -57,9 +56,38 @@ const Dictionary = () => {
 
                 </div>
 
-                <div className="flex flex-row justify-center border-solid border-4 py-5 w-screen">
-                    <h1 className="text-3xl"> Result </h1>
+                {/* Here we map the definitions of the word that we searched for. 
+                    The response of the django api call will be returned as a json object, which
+                    contains the array of definitions for the word. We map through the array and display
+                    the definitions with examples. 
+                */}
+                <div className="flex flex-row justify-center items-center py-5">
+                    <div className="space-y-4 flex flex-col justify-center items-center">
+                        {data['list'].map((item, index) => (
+
+                            <div className="flex flex-col justify-center items-center space-y-5 w-full" key={index}>
+
+                                <div className="hover:text-white hover:shadow-lg hover:bg-green-600 transition-all duration-200 hover:border-gray-600 border-solid border-2 border-gray-200 lg:border-t bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal w-2/3">
+                                    
+                                    {/* The definition and example for each case.*/ }
+                                    <div className="mb-2">
+                                        <div className="text-gray-900 font-bold text-lg">Definition {index+1}</div>
+                                        <p className="text-base"> {item.definition}  </p>
+
+                                        <br />
+
+                                        <div className="text-gray-900 font-bold text-lg">Example</div>
+                                        <p className="text-base"> {item.example}  </p>
+
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
+
+                {/* Here we end the section for the definitions retrieved from calling the api*/}
             </div>
         </>
     );
