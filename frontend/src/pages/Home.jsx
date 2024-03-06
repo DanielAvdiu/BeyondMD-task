@@ -1,6 +1,7 @@
 import HelloBeyondMD from "../components/HelloBeyondMD";
 import AdditionalHome from "../components/AdditionalHome";
 import SearchWord from "../components/SearchWord";
+import ResumeViewer from "../components/ResumeViewer";
 
 
 const home = () => {
@@ -11,6 +12,7 @@ const home = () => {
                 <HelloBeyondMD />
                 <AdditionalHome />
                 <SearchWord />
+                <ResumeViewer />
             </div>
         </>
     );

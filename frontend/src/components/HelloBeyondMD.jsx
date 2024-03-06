@@ -1,4 +1,28 @@
+import axios from "axios";
+
 const HelloBeyondMD = () => {
+
+    const handleClick = () => {
+        //This is the function that will be called when the download button is clicked.
+        //It will make a call to the backend (django) and the response will be 
+        
+        let fileDownload = require('js-file-download');
+
+        const handlePDFDownload = async () => {
+            await axios.get('http://127.0.0.1:8000/playground/download/', {
+                responseType: 'blob',
+            }).then((response) => {
+                fileDownload(response.data, 'Daniel_Avdiu_Resume.pdf');
+                console.log(response);
+            }).catch((error) => {
+                console.log(error);
+            });
+        };
+
+        handlePDFDownload();
+    };
+
+
     return (
         <>
             {/* Here is the section that holds the div for Hello BeyondMD and the button
@@ -27,7 +51,7 @@ const HelloBeyondMD = () => {
                 </div>
 
                 <div className="">
-                    <button className="border-red-600 border-2 border-solid hover:shadow-2xl hover:bg-red-600 hover:text-white px-4 py-4 rounded-md border-red-600 hover:border-none">PDF Resume</button>
+                    <button onClick={() => handleClick()} className="border-red-600 border-2 border-solid hover:shadow-2xl hover:bg-red-600 hover:text-white transition-all duration-200 px-4 py-4 rounded-md border-red-600 hover:border-none">PDF Resume</button>
                 </div>
 
             </div>

@@ -9,6 +9,30 @@ import firebase_admin
 from firebase_admin import credentials
 import requests
 
+from django.core.files import File
+from django.http import HttpResponse
+from rest_framework.decorators import api_view
+from backend.settings import BASE_DIR, MEDIA_ROOT
+
+
+"""
+This endpoint is used in order to download the pdf document
+of my resume. Once the button in the frontend is clicked, it 
+invokes a function that calls this endpoint. The function is
+asynchronous, meaning that I had to use the keywords 'async'
+and 'await'. When the endpoing is called, it knows the location of
+the pdf file and returns it in a 'blob' format.
+"""
+@api_view(['GET'])
+def DownloadPDF(self):
+    path_to_file = MEDIA_ROOT + '\\Daniel_Avdiu_Resume.pdf'
+    f = open(path_to_file, 'rb')
+    pdfFile = File(f)
+    response  = HttpResponse(pdfFile.read())
+    response['Content-Disposition'] = 'attachment;'
+    return response
+
+
 
 # Create your views here.
 class ReactView(APIView):
