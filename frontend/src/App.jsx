@@ -4,16 +4,18 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Stories from "./pages/Stories";
 import Dictionary from "./pages/Dictionary";
+import Exchange from "./pages/Exchange";
 
 
 function App() {
   return (
     <>
-      <div className="App flex-col">
+      <div className="App flex-col scrollbar-hide">
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/dictionary" element={<Dictionary />} />
+          <Route path="/exchange" element={<Exchange />} />
           <Route path="/about" element={< About />} />
         </Routes>
         
