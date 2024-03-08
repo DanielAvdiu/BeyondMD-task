@@ -1,4 +1,7 @@
 import { useState, useEffect } from "react";
+import books from "../assets/books.gif";
+import { book_shelf } from "../assets";
+import gifImage from "../assets/books.gif";
 
 const Dictionary = () => {
 
@@ -12,6 +15,7 @@ const Dictionary = () => {
       information about the word. The way that the server handles the calls is explained in the 
       django code for the server.
     */}
+
     const handleClick = async () => {
         {/* Here we make the call*/ }
 
@@ -22,6 +26,7 @@ const Dictionary = () => {
 
         const makeCall = async () => {
             await fetch(urlWithParams).then(response => response.json()).then(data => { setData(data); setListData(data['list']); console.log(data); console.log(listdata) });
+            document.getElementById("gif").classList.toggle("hidden");
         };
 
         makeCall();
@@ -74,17 +79,16 @@ const Dictionary = () => {
                                         <div className="text-gray-900 font-bold text-lg">Definition {index+1}</div>
                                         <p className="text-base"> {item.definition}  </p>
 
-                                        <br />
-
-                                        <div className="text-gray-900 font-bold text-lg">Example</div>
-                                        <p className="text-base"> {item.example}  </p>
-
                                     </div>
                                     
                                 </div>
                             </div>
                         ))}
                     </div>
+                </div>
+
+                <div id="gif" className="flex justify-center items-center">
+                    <img src={gifImage} alt="" />
                 </div>
 
                 {/* Here we end the section for the definitions retrieved from calling the api*/}

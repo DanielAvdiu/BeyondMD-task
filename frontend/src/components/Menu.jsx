@@ -54,7 +54,7 @@ const Menu = () => {
                 <div className="py-4 text-4xl justify-center items-center text-center w-screen border-2 border-black border-solid">
 
                     <div className="text-2xl flex justify-center text-center">
-                        Learn about your condition
+                        Choose From Services
                     </div>
 
                     <div className="p-4 flex flex-col sm:flex-row flex-wrap justify-center items-center">

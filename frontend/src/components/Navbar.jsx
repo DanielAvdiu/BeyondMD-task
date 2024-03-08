@@ -7,7 +7,7 @@ export const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
 
     return (
-        <nav>
+        <nav className="relative">
             <Link to="/" className="title">
                 Welcome!
             </Link>

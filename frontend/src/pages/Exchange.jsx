@@ -1,125 +1,197 @@
 import Select from "react-dropdown-select";
-
+import { useEffect, useState } from "react";
+import { currencies } from "../assets";
+import axios from "axios";
 
 const Exchange = () => {
 
     const currencies = [
         {
-            value: 1,
+            value: "SGD",
             label: "SDG"
         },
         {
-            value: 2,
+            value: "MYR",
             label: "MYR"
         },
         {
-            value: 3,
+            value: "EUR",
             label: "EUR"
         },
         {
-            value: 4,
+            value: "USD",
             label: "USD"
         },
         {
-            value: 5,
+            value: "AUD",
             label: "AUD"
         },
         {
-            value: 6,
+            value: "JPY",
             label: "JPY"
         },
         {
-            value: 7,
+            value: "CNH",
             label: "CNH"
         },
         {
-            value: 8,
+            value: "HKD",
             label: "HKD"
         },
         {
-            value: 9,
+            value: "CAD",
             label: "CAD"
         },
         {
-            value: 10,
+            value: "INR",
             label: "INR"
         },
         {
-            value: 11,
+            value: "DKK",
             label: "DKK"
         },
         {
-            value: 12,
+            value: "GBP",
             label: "GBP"
         },
         {
-            value: 13,
+            value: "RUB",
             label: "RUB"
         },
         {
-            value: 14,
+            value: "NZD",
             label: "NZD"
         },
         {
-            value: 15,
+            value: "MXN",
             label: "MXN"
         },
         {
-            value: 16,
+            value: "IDR",
             label: "IDR"
         },
         {
-            value: 17,
+            value: "TWD",
             label: "TWD"
         },
         {
-            value: 18,
+            value: "THB",
             label: "THB"
         },
         {
-            value: 19,
+            value: "VND",
             label: "VND"
         }
     ];
 
+    const [result, setResult] = useState("Result");
+    const [firstSelect, setFirstSelect] = useState("");
+    const [secondSelect, setSecondSelect] = useState("");
+    const [value, setValue] = useState(0);
+
+
+    const handleConvert = () => {
+
+        const par1 = firstSelect;
+        const par2 = secondSelect;
+        const par3 = value;
+
+        // const urlWithParams = `http://127.0.0.1:8000/playground/exchange/?par1=${par1}&par2=${par2}&par3=${par3}`;
+        const urlWithParams = "http://127.0.0.1:8000/playground/exchange/?par1=" + par1 + "&par2=" + par2 + "&par3=" + par3;
+        const convert = async () => {
+            await fetch(urlWithParams).then(response => response.json()).then(data => { setResult(data); console.log(data); });
+        };
+
+        convert();
+    };
+
+    useEffect(() => {
+        console.log(firstSelect);
+    }, [firstSelect]);
+
+    useEffect(() => {
+        console.log(secondSelect);
+    }, [secondSelect]);
+
     return (
         <>
-            <div className="space-y-10 sm:space-y-0 flex flex-col justify-center items-center border-2 border-black border-solid px-10 py-10 mr-5 ml-5 mt-5 mb-5">
+            <div className="border-2 border-black border-solid">
 
-                <h1 className="text-3xl">Exchange Here</h1>
-                {/* This is the page where we can exchange currencies */}
-                <div className="space-y-10 sm:space-y-0 flex flex-col justify-center items-center border-2 border-black border-solid px-10 py-10 mr-5 ml-5 mt-5 mb-5">
+                <div className="border-2 border-black border-solid flex flex-col sm:flex-row justify-center items-center mr-5 ml-5 mt-5 mb-5 size-full scrollbar-hide">
 
-                    {/* <div className="border-2 border-red-600 border-solid mx-4 px-5">
-                    <h1>First div</h1>
-                </div> */}
+                    {/* This is the page where we can exchange currencies */}
+                    <div className="hover:shadow-xl space-y-4 sm:space-y-0 flex flex-col justify-center items-center border-2 border-black border-solid px-10 py-10 mr-5 ml-5 mt-5 mb-5">
 
-                    <div className="flex flex-col sm:flex-row">
+                        <h1 className="text-3xl">Exchange Here</h1>
 
-
-                        <Select className="mx-5"
-                            options={currencies}
-                            onchange={(values) => this.setValues(values)
-                            } />
-
-                        <div className="px-5">
-
+                        <div>
+                            <h1 className="mb-4 text-2xl">Choose the Currencies</h1>
                         </div>
-                        <Select className="mx-5"
-                            options={currencies}
-                            onchange={(values) => this.setValues(values)
-                            } />
+
+                        <div className="flex flex-col sm:flex-row justify-center items-center">
+
+                            <Select
+                                id="firstSelect"
+                                className="fixed"
+                                options={currencies}
+                                onChange={(selectedOptions) => {
+                                    if (selectedOptions.length > 0) {
+                                        setFirstSelect(selectedOptions[0].label);
+                                    } else {
+                                        setFirstSelect(''); // Handle case when no option is selected
+                                    }
+                                }}
+                            />
+
+                            <div className="py-2 px-2">
+
+                            </div>
+                            <Select
+                                id="secondSelect"
+                                options={currencies}
+                                onChange={(selectedOptions) => {
+                                    if (selectedOptions.length > 0) {
+                                        setSecondSelect(selectedOptions[0].label);
+                                    } else {
+                                        setSecondSelect(''); // Handle case when no option is selected
+                                    }
+                                }}
+                            />
+                        </div>
+
+                        <div>
+                            <h1 className="mt-10 text-xl">Insert the value</h1>
+                        </div>
+
+                        <div>
+                            <input type="text" placeholder="Value" value={value} className="rounded-lg border-2 border-gray-500 border-solid mb-2 mx-10 py-2 px-2" onChange={(e) => setValue(e.target.value)} />
+                        </div>
+
+                        {/* When the button is clicked */}
+                        <div className="flex justify-center items-center">
+                            <button onClick={() => handleConvert()} className="hover:bg-purple-800 hover:text-white transition-all duration-300 rounded-lg hover:shadow-lg rounded-lg mb-2 border-2 border-gray-500 border-solid px-4 py-2"> Convert </button>
+                        </div>
+
+
+                        {/* This is the section where the converted number will be displayed.
+                        It is set to be disabled so that the user cannot interact with it.
+                    */}
+                        <div className="flex justify-center items-center">
+                            <input id="result" className="rounded-lg border-2 border-gray-500 border-solid px-4 py-2" type="text" disabled placeholder={result} />
+                        </div>
+
                     </div>
 
+                    {/* This section will be used to get financial data from the api call */}
                     <div>
-                        <input type="text" placeholder="value" className="border-2 border-black border-solid my-10 mx-10"/>
-                    </div>
 
+                    </div>
 
                 </div>
-
             </div>
         </>
+
+
     );
 }
 

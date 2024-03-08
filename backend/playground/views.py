@@ -46,11 +46,13 @@ class ReactView(APIView):
             serializer.save()
             return Response(serializer.data)
 
+@api_view(['GET'])
 def say_hello(request):
     cred = credentials.Certificate("path/to/serviceAccountKey.json")
     firebase_admin.initialize_app(cred)
     return JsonResponse({'message': 'Hello, Django!'})
 
+@api_view(['GET'])
 def find_free(request):
     query_params = request.GET
     # Now you can access individual parameters like this:
@@ -70,5 +72,28 @@ def find_free(request):
     print(response)
 
     return JsonResponse(response.json())
+
+@api_view(['GET'])
+def exchange(request):
+    
+    param1_value = request.GET.get('par1', 'default_value')
+    param2_value = request.GET.get('par2', 'default_value')
+    param3_value = request.GET.get('par3', 'default_value')
+    
+
+    url = "https://currency-exchange.p.rapidapi.com/exchange"
+
+    querystring = {"from": param1_value,"to": param2_value ,"q": param3_value}
+
+    headers = {
+	    "X-RapidAPI-Key": "395845721dmsh6a40198214a94dbp119f11jsn5fc16ba16f43",
+	    "X-RapidAPI-Host": "currency-exchange.p.rapidapi.com"
+    }
+
+    response = requests.get(url, headers=headers, params=querystring)
+
+    print(response)
+    
+    return JsonResponse(response.json(), safe=False)
 
         
