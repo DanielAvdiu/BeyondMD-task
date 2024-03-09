@@ -47,11 +47,11 @@ const Menu = () => {
     }
 
     return (
-        <div className="flex flex-wrap gap-5 justify-center items-center h-auto border-2 border-black border-solid">
+        <div className="flex flex-wrap gap-5 justify-center items-center h-auto">
 
-            <div className="bg-white text-black h-auto w-[99] flex-col justify-center items-center text-2xl border-2 border-black border-solid">
+            <div className="bg-white text-black h-auto w-[99] flex-col justify-center items-center text-2xl">
 
-                <div className="py-4 text-4xl justify-center items-center text-center w-screen border-2 border-black border-solid">
+                <div className="py-4 text-4xl justify-center items-center text-center w-screen">
 
                     <div className="text-2xl flex justify-center text-center">
                         Choose From Services

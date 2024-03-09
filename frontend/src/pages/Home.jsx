@@ -1,16 +1,17 @@
 import HelloBeyondMD from "../components/HelloBeyondMD";
-import AdditionalHome from "../components/AdditionalHome";
 import Menu from "../components/Menu";
 import Footer from "../components/Footer";
-import Carousel from "../components/Carousel";
+import lake from "../assets/lake.jpg";
+import landscape from "../assets/landscape.jpg";    
 
 const home = () => {
 
-    return ( 
+
+    return (
         <>
-            <div className="flex flex-col justify-center items-center align-items border-solid border-4">
+
+            <div style={{backgroundImage: `url(${landscape})`, backgroundSize: 'cover', backgroundPosition: 'center'}} className="h-96 w-full bg-no-repeat bg-fixed flex flex-col justify-center items-center align-items">
                 <HelloBeyondMD />
-                <Carousel />
             </div>
 
             <div className="flex flex-wrap flex-row gap-5 justify-center h-auto">
@@ -21,5 +22,5 @@ const home = () => {
         </>
     );
 }
- 
+
 export default home;

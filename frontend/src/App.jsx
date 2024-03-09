@@ -10,7 +10,7 @@ import Exchange from "./pages/Exchange";
 function App() {
   return (
     <>
-      <div className="App flex-col scrollbar-hide">
+      <div className="App flex-col overflow-auto scrollbar-hide">
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
