@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { dictionary, notes, sports, exchange } from '../assets';
+import { dictionary, notes, exchange, about } from '../assets';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -25,17 +25,16 @@ const options = [
     },
     {
         "id": 3,
-        "image": sports,
-        "description": "Sports",
-        "navigate": "/sports"
+        "image": exchange,
+        "description": "Finance",
+        "navigate": "/finance"
     },
     {
         "id": 4,
-        "image": exchange,
-        "description": "Exchange",
-        "navigate": "/exchange"
+        "image": about,
+        "description": "About",
+        "navigate": "/about"
     }
-
 ]
 
 const Menu = () => {

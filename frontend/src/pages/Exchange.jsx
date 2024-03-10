@@ -4,11 +4,6 @@ import crrencies from "../assets/crrencies.png";
 import axios from "axios";
 import { StockList } from "../components";
 
-
-//TODO: add the finance news
-//TODO: add the finance rates
-//TODO: add the stock list
-
 const Exchange = () => {
 
     const currencies = [

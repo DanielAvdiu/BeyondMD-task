@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 const StockList = () => {
     const [stockList, setStockList] = useState({});
-    const [stockArray, setStockArray] = useState([{symbol: "AAPL", name: "Apple Inc", exchange: "NASDAQ", currency: "USD", country: "USA", type: "Common Stock"}]);
+    const [stockArray, setStockArray] = useState([{ symbol: "AAPL", name: "Apple Inc", exchange: "NASDAQ", currency: "USD", country: "USA", type: "Common Stock" }]);
 
     useEffect(() => {
 
@@ -14,7 +14,8 @@ const StockList = () => {
 
         setTimeout(() => {
             fetchStockList();
-        }, 1000);
+        }, 2000);
+
         console.log(stockList);
     }, []);
 
@@ -24,12 +25,12 @@ const StockList = () => {
             {/*The two tables for stock list and mutual funds*/}
             <div className="flex flex-col justify-center items-center">
 
-                <div className="shadow-xl mx-5 my-5" style={{maxWidth: "900px", maxHeight: "800px"}}>
+                <div className="shadow-xl mx-5 my-5" style={{ maxWidth: "900px", maxHeight: "800px" }}>
                     <div className="flex flex-row justify-center items-center">
                         <h1 className="font-bold text-2xl">Stock List</h1>
                     </div>
 
-                    <div className="overflow-auto scrollbar-hide" style={{ maxHeight: "500px"}}>
+                    <div className="overflow-auto scrollbar-hide" style={{ maxHeight: "500px" }}>
                         <table className="table-auto justify-between pl-2 py-2 table-auto text-white bg-gray-700">
                             <thead>
                                 <tr className="bg-black ">
@@ -41,10 +42,9 @@ const StockList = () => {
                                     <th>Type</th>
                                 </tr>
                             </thead>
-                            
-                            {stockArray.map((item, index) => (
 
-                                <tr className="text-sm border-solid border-2 border-black cursor-pointer hover:bg-black hover:shadow-xl font-semibold transition-all duration-300">
+                            {stockArray.length > 0 && stockArray.map((item, index) => (
+                                <tr key={index} className="text-sm border-solid border-2 border-black cursor-pointer hover:bg-black hover:shadow-xl font-semibold transition-all duration-300">
                                     <td className="text-blue-500">{item.symbol}</td>
                                     <td>{item.name}</td>
                                     <td>{item.exchange}</td>

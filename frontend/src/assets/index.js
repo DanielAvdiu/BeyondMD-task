@@ -6,5 +6,7 @@ import crr from './crr.jpg';
 import books from './books.gif';
 import book_shelf from './book_shelf.jpeg';
 import crrencies from './crrencies.png';
+import about from './about.png';
+import notes1 from './notes1.jpeg';
 
-export {dictionary, notes, sports, exchange, crr, books, book_shelf, crrencies};
+export {dictionary, notes, sports, exchange, crr, books, book_shelf, crrencies, about, notes1};
