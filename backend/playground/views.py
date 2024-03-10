@@ -96,4 +96,19 @@ def exchange(request):
     
     return JsonResponse(response.json(), safe=False)
 
-        
+
+@api_view(['GET'])
+def get_stock_list(request):
+
+    url = "https://twelve-data1.p.rapidapi.com/stocks"
+
+    querystring = {"exchange":"NASDAQ","format":"json"}
+
+    headers = {
+	    "X-RapidAPI-Key": "395845721dmsh6a40198214a94dbp119f11jsn5fc16ba16f43",
+	    "X-RapidAPI-Host": "twelve-data1.p.rapidapi.com"
+    }
+
+    response = requests.get(url, headers=headers, params=querystring)
+    
+    return JsonResponse(response.json(), safe=False)

@@ -118,6 +118,15 @@ const Exchange = () => {
         console.log(secondSelect);
     }, [secondSelect]);
 
+    useEffect(() => {
+
+        const get_stock = async () => {
+            await fetch('http://127.0.0.1:8000/playground/stocks/').then(response => response.json()).then(data => { console.log(data); });
+        };
+
+        get_stock();
+    }, [])
+
     return (
         <>
             {/* The whole page */}
