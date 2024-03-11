@@ -35,16 +35,8 @@ def DownloadPDF(self):
 
 
 # Create your views here.
-class ReactView(APIView):
-    def get(self, request):
-        output = [{ 'employee': output.employee, 'department': output.department } for react in React.objects.all()]
-        return Response(output)
 
-    def post(self, request):
-        serializer = ReactSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data)
+
 
 @api_view(['GET'])
 def say_hello(request):
@@ -131,3 +123,8 @@ def get_mutual_funds(request):
     print(response.json())
     
     return JsonResponse(response.json(), safe=False)
+
+@api_view(['GET'])
+def get_notes(request):
+    notes= Note.objects.all().values()
+    return JsonResponse(list(notes), safe=False)
