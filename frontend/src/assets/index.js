@@ -8,5 +8,6 @@ import book_shelf from './book_shelf.jpeg';
 import crrencies from './crrencies.png';
 import about from './about.png';
 import notes1 from './notes1.jpeg';
+import blue from './blue.jpg';
 
-export {dictionary, notes, sports, exchange, crr, books, book_shelf, crrencies, about, notes1};
+export {dictionary, notes, sports, exchange, crr, books, book_shelf, crrencies, about, notes1, blue};
