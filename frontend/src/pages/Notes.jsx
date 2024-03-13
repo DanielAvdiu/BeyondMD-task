@@ -4,6 +4,10 @@ import blue from "../assets/blue.jpg";
 
 const Notes = () => {
 
+    const [title, setTitle] = useState("");
+    const [content, setContent] = useState("");
+    const [date, setDate] = useState("");
+
     const [notes, setNotes] = useState([{
         "title": "Note 1",
         "note": "This is the first note"
@@ -21,12 +25,22 @@ const Notes = () => {
 
     useEffect(() => {
         const get_notes = async () => {
-            await fetch("http://127.0.0.1:8000/playground/notes/").then(response => response.json()).then(data => { console.log(data) });
+            await fetch("http://127.0.0.1:8000/playground/notes/").then(response => response.json()).then(data => { setNotes(data); console.log(data) }).catch(error => console.log(error));
         };
 
         get_notes();
 
     }, []);
+
+
+    const handleDelete = (id) => {
+        console.log(id);
+    };
+
+    useEffect(() => {console.log(title)}, [title]);
+
+    useEffect(() => {console.log(content)}, [content]);
+
 
     return (
         <>
@@ -40,8 +54,8 @@ const Notes = () => {
                             <h1 className="font-bold text-2xl text-white">Notes form</h1>
 
                             <form action="" className="flex flex-col">
-                                <input className="rounded-lg shadow-lg hover:shadow-xl border-2 border-black border-solid my-2 py-2" type="text" placeholder="Title" />
-                                <textarea className=" mb-3 mt-2 border-2 border-black border-solid shadow-lg hover:shadow-xl rounded-lg" name="note" id="note" cols="30" rows="10" placeholder="Note"></textarea>
+                                <input onChange={(event) => setTitle(event.target.value)} className="rounded-lg shadow-lg hover:shadow-xl border-2 border-black border-solid my-2 py-2" type="text" placeholder="Title" />
+                                <textarea onChange={(event) => setContent(event.target.value)} className=" mb-3 mt-2 border-2 border-black border-solid shadow-lg hover:shadow-xl rounded-lg" name="note" id="note" cols="30" rows="10" placeholder="Note"></textarea>
                                 <button className="border-2 border-black border-solid shadow-lg text-black hover:text-white hover:bg-purple-900 transition-all duration-200 rounded-lg my-2 bg-white">Add Note</button>
                             </form>
                         </div>
@@ -57,8 +71,14 @@ const Notes = () => {
                                 {notes.map(note => {
                                     return (
                                         <div className="flex flex-col">
-                                            <h1>{note.title}</h1>
-                                            <p>{note.note}</p>
+                                            <div className="border-2 border-black border-solid mx-2 my-2 flex flex-row">
+                                                <div className="flex flex-col">
+                                                    <h1>{note.title}</h1>
+                                                    <h1>{note.content}</h1>
+                                                </div>
+
+                                                <button onClick={() => {handleDelete(note.note_id)}}  className="border-2 border-black border-solid"> Delete </button>
+                                            </div>
                                         </div>
                                     );
                                 })}
