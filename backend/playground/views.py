@@ -128,3 +128,15 @@ def get_mutual_funds(request):
 def get_notes(request):
     notes= Note.objects.all().values()
     return JsonResponse(list(notes), safe=False)
+
+@api_view(['POST'])
+def add_note(request):
+    data = request.data
+    note = Note.objects.create(note_id=data['par1'], title=data['par2'], content=data['par3'], created_at=data['par4'])
+    return JsonResponse({'message': 'Note created successfully!'})
+
+@api_view(['DELETE'])
+def delete_note(request):
+    data = request.data
+    note = Note.objects.get(note_id=data['par1']).delete()
+    return JsonResponse({'message': 'Note deleted successfully!'})
