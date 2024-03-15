@@ -10,6 +10,7 @@ in real time.
 <p align="center">
   <img src="frontend/src/assets/sceenshots/homePage.png" width="900" title="hover text">
   <br/>
+  <br/>
 
   <img src="frontend/src/assets/sceenshots/pdfResume.png" width="900" title="hover text">
   
@@ -38,7 +39,12 @@ be in the form of JSON object. After retrieving the response in a JSON file, we 
 the Definitions with the map function. 
 
 <p align="center">
-  <img src="frontend/src/assets/sceenshots/dictionaryPage.png" width="350" title="hover text">
+  <img src="frontend/src/assets/sceenshots/dictionaryPage.png" width="900" title="hover text">
+  <br/>
+  <br/>
+  
+  <img src="frontend/src/assets/sceenshots/wordSearch.png" width="900" title="hover text">
+  
 </p>
 
 <hr/>
