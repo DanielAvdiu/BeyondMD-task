@@ -8,10 +8,10 @@ and the finance page. In the Notes page you can keep notes and delete them
 in real time. 
 
 <p align="center">
-  <img src="frontend/src/assets/sceenshots/homePage.png" width="900" title="hover text">
+  <img src="frontend/src/assets/sceenshots/homePage.png" width="800" title="hover text">
   <br/>
   <br/>
-  <img src="frontend/src/assets/sceenshots/pdfResume.png" width="900" title="hover text">
+  <img src="frontend/src/assets/sceenshots/pdfResume.png" width="800" title="hover text">
 
 </p>
 
@@ -38,11 +38,11 @@ be in the form of JSON object. After retrieving the response in a JSON file, we 
 the Definitions with the map function. 
 
 <p align="center">
-  <img src="frontend/src/assets/sceenshots/dictionaryPage.png" width="900" title="hover text">
+  <img src="frontend/src/assets/sceenshots/dictionaryPage.png" width="800" title="hover text">
   <br/>
   <br/>
   
-  <img src="frontend/src/assets/sceenshots/wordSearch.png" width="900" title="hover text">
+  <img src="frontend/src/assets/sceenshots/wordSearch.png" width="800" title="hover text">
   
 </p>
 
@@ -57,11 +57,11 @@ from the backend. The request is made to the backend and then the backend gets t
 to the ready api.
 
 <p align="center">
-  <img src="frontend/src/assets/sceenshots/financePage.png" width="900" title="hover text">
+  <img src="frontend/src/assets/sceenshots/financePage.png" width="800" title="hover text">
   <br/>
   <br/>
 
-  <img src="frontend/src/assets/sceenshots/stockPage1.png" width="900" title="hover text">
+  <img src="frontend/src/assets/sceenshots/stockPage1.png" width="800" title="hover text">
   
 </p>
 
@@ -77,7 +77,7 @@ backend with a DELETE http request. After that the instance is deleted from the 
 the django backend.
 
 <p align="center">
-  <img src="frontend/src/assets/sceenshots/notesPage.png" width="900" title="hover text">
+  <img src="frontend/src/assets/sceenshots/notesPage.png" width="800" title="hover text">
   <br/>
   <br/>
 </p>
@@ -91,6 +91,6 @@ one of the folders, and when it receives a request from the front-end, it return
 the PDF resume as a blob file.
 
 <p align="center">
-  <img src="frontend/src/assets/sceenshots/pdfResume.png" width="900" title="hover text">  
+  <img src="frontend/src/assets/sceenshots/pdfResume.png" width="800" title="hover text">  
 </p>
 
