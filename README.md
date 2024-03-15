@@ -9,6 +9,10 @@ in real time.
 
 <p align="center">
   <img src="frontend/src/assets/sceenshots/homePage.png" width="900" title="hover text">
+  <br/>
+
+  <img src="frontend/src/assets/sceenshots/pdfResume.png" width="900" title="hover text">
+  
 </p>
 
 <hr/>
