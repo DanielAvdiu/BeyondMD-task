@@ -51,7 +51,8 @@ backend with a DELETE http request. After that the instance is deleted from the 
 the django backend.
 
 <br />
--- The PDF resume --
+<hr/>
+-- The PDF resume --<br/>
 In the home page you can download my resume. Once the button is clicked
 the request is sent to the Django Backend. The django backend has the file in 
 one of the folders, and when it receives a request from the front-end, it returns
