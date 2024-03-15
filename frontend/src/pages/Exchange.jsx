@@ -165,6 +165,9 @@ const Exchange = () => {
 
                             <div className="flex flex-col sm:flex-row justify-center items-center">
 
+                                {/* The two select components let the user choose between the available 
+                                    currencies.
+                                */}
                                 <Select
                                     id="firstSelect"
                                     className="fixed bg-white text-black font-bold"

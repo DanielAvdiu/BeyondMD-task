@@ -28,12 +28,6 @@ const options = [
         "image": exchange,
         "description": "Finance",
         "navigate": "/finance"
-    },
-    {
-        "id": 4,
-        "image": about,
-        "description": "About",
-        "navigate": "/about"
     }
 ]
 

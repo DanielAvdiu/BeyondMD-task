@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from "react";
-import notes1 from "../assets/notes1.jpeg";
-import blue from "../assets/blue.jpg";
 import newback from "../assets/newback.jpg";
 
 const Notes = () => {
+
 
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
     const [date, setDate] = useState("");
 
+    {/* the variable note is used in case the
+        retrieving of the notes from the backend 
+        fails. 
+    */}
     const [notes, setNotes] = useState([{
         "title": "Note 1",
         "note": "This is the first note"
@@ -28,11 +31,21 @@ const Notes = () => {
     };
 
 
+    {/* Anytime the page is refreshed or loaded, the funciton
+        get_notes() is called, which retrieves the notes from the
+        django backend.
+    */}
     useEffect(() => {
         get_notes();
 
     }, []);
 
+
+    {/* When the button to add the note is clicked
+        this function is called. We get the values and use
+        them as parameters for the api call. This time it is 
+        HTTP post api, meaning that we will create a new note.
+    */}
     const handleAdd = (event) => {
 
         event.preventDefault();
@@ -79,6 +92,14 @@ const Notes = () => {
     };
 
 
+    {/* This function is called when we want to delete a note. 
+        Each of the notes that is shown in the notes list, has a unique id
+        which is generated from the current time. When the delete button is
+        clicked, this function is called, and the id of the note is passed as
+        a parameter. The api call is made to the django backend. In the backend,
+        the note with the passed on id will be deleted from the entries in the database.
+        Then the notes are retrieved again, and the list is updated.
+    */}
     const handleDelete = (e, id) => {
         e.preventDefault();
 
@@ -104,6 +125,7 @@ const Notes = () => {
         }, 400);
     };
 
+    {/* Used for deb */}
     useEffect(() => { console.log(title) }, [title]);
 
     useEffect(() => { console.log(content) }, [content]);
