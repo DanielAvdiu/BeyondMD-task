@@ -42,7 +42,7 @@ const Dictionary = () => {
 
                 <div className="flex flex-col items-center justify-center">
 
-                    <div style={{backgroundImage: `url(${book_shelf})`, backgroundSize: 'cover', backgroundPosition: 'center'}} className="bg-fixed bg-no-repeat backdrop-blur h-72 w-screen flex flex-col justify-center items-center py-5 w-screen space-y-4">
+                    <div style={{backgroundImage: `url(${book_shelf})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: "fixed"}} className="bg-fixed bg-no-repeat backdrop-blur h-72 w-screen flex flex-col justify-center items-center py-5 w-screen space-y-4">
                         <h1 className="text-white font-semibold text-3xl"> Dictionary - Search for a word </h1>
 
                         {/* Here is the search bar. */}

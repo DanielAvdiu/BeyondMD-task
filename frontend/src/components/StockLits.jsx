@@ -2,9 +2,20 @@ import React from "react";
 import { useState, useEffect } from "react";
 
 const StockList = () => {
+
+    {/* stockList and stockArray are used for the stock information that is retrieved from the
+        django backend. The stocklist is the whole set of information that is retrieved, stockArray
+        is just the array that is part of the stockList.
+*/}
     const [stockList, setStockList] = useState({});
     const [stockArray, setStockArray] = useState([{ symbol: "AAPL", name: "Apple Inc", exchange: "NASDAQ", currency: "USD", country: "USA", type: "Common Stock" }]);
 
+
+
+    {/* useEffect here is used to make sure that whenever the page is refreshed or loaded
+        an api call will be made to the django backend to get the stock information. After the 
+        information is fetched it is set to the stockList and stockArray variables.    
+*/}
     useEffect(() => {
 
         const fetchStockList = async () => {
@@ -30,6 +41,9 @@ const StockList = () => {
                         <h1 className="font-bold text-2xl">Stock List</h1>
                     </div>
 
+                    {/* This div has the option overflow-auto in order to make it a scrollable
+                        element. I have used scrollbar-hide to hide the scrollbar.
+                    */}
                     <div className="overflow-auto scrollbar-hide" style={{ maxHeight: "500px" }}>
                         <table className="table-auto justify-between pl-2 py-2 table-auto text-white bg-gray-700">
                             <thead>

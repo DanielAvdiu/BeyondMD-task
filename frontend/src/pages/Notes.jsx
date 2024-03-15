@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import notes1 from "../assets/notes1.jpeg";
 import blue from "../assets/blue.jpg";
+import newback from "../assets/newback.jpg";
 
 const Notes = () => {
 
@@ -116,7 +117,7 @@ const Notes = () => {
 
                     <div className="flex flex-col sm:flex-row">
 
-                        <div style={{ backgroundImage: `url(${blue})`, backgroundSize: 'fit', backgroundPosition: 'center', minWidth: "300px" }} className="bg-static bg-no-repeat sm:h-screen w-screen flex flex-col justify-center items-center bg-white sm:w-1/3">
+                        <div style={{ backgroundImage: `url(${newback})`, backgroundSize: 'fit', backgroundPosition: 'center', minWidth: "300px"}} className="bg-static bg-no-repeat sm:h-screen w-screen flex flex-col justify-center items-center bg-white sm:w-1/3">
                             <h1 className="font-bold text-2xl text-white">Notes form</h1>
 
                             <div className="flex flex-col">
@@ -133,7 +134,7 @@ const Notes = () => {
                         */}
                         <div className="flex flex-col justify-start items-center w-screen">
                             <h1 className="font-bold text-xl">All the notes</h1>
-                            <div style={{ maxHeight: "500px" }} className="overflow-auto scrollbar-hide">
+                            <div style={{ maxHeight: "900px" }} className="overflow-auto scrollbar-hide">
                                 {notes.map(note => {
                                     return (
                                         <div className="font-bold w-96 flex-col">

@@ -6,6 +6,7 @@ import { StockList } from "../components";
 
 const Exchange = () => {
 
+    {/* This is the currencies' object that has all the currencies. */}
     const currencies = [
         {
             value: "SGD",
@@ -85,12 +86,21 @@ const Exchange = () => {
         }
     ];
 
+
+    {/* useState is used to make the website more dynamic with the variables
+        that are used in the website.
+    */}
     const [result, setResult] = useState("Result");
     const [firstSelect, setFirstSelect] = useState("");
     const [secondSelect, setSecondSelect] = useState("");
     const [value, setValue] = useState(0);
 
 
+    {/* handleConvert is called whenever the convert button is clicked.
+        The parameters will be passed in the url to the backend when the api 
+        call is made. The firstSelect and secondSelect are the currency selections and
+        the value is the value that is to be converted.
+    */}
     const handleConvert = () => {
 
         const par1 = firstSelect;
@@ -103,6 +113,11 @@ const Exchange = () => {
             await fetch(urlWithParams).then(response => response.json()).then(data => { setResult(data); console.log(data); });
         };
 
+        {/* The asynchronous function is inside the handleConvert function.
+            Because it is asynchronous, we make sure that we wait for the response,
+            that is why we created the inner function and call it at the end of the handleConvert function.
+        */}
+
         convert();
     };
 
@@ -114,6 +129,10 @@ const Exchange = () => {
         console.log(secondSelect);
     }, [secondSelect]);
 
+
+    {/* This useEffect is used to get the stock information. The concept is still the sane
+        as the previous one.
+    */}
     useEffect(() => {
 
         const get_stock = async () => {
@@ -125,6 +144,9 @@ const Exchange = () => {
 
     return (
         <>
+            {/* The outer div is used for the background and to make sure to arrange the inner divs in the
+                preferred way.
+            */}
             <div className="bg-gradient-to-b sm:bg-gradient-to-r from-blue-800 from-10% via-blue-600 via-30% to-blue-400 to-90% ">
                 {/* The whole page */}
                 <div className="w-screen flex flex-row sm:flex-row justify-center">

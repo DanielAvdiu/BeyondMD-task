@@ -9,5 +9,10 @@ import crrencies from './crrencies.png';
 import about from './about.png';
 import notes1 from './notes1.jpeg';
 import blue from './blue.jpg';
+import newback from './newback.jpg';
 
-export {dictionary, notes, sports, exchange, crr, books, book_shelf, crrencies, about, notes1, blue};
+{/* This file is used to import the assets, in this case the images
+    and then import them in the other pages as components.
+*/}
+
+export {dictionary, notes, sports, exchange, crr, books, book_shelf, crrencies, about, notes1, blue, newback};
