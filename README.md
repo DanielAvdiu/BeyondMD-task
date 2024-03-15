@@ -7,6 +7,15 @@ After that is the services list. You can select between the dictionary, notes
 and the finance page. In the Notes page you can keep notes and delete them
 in real time. 
 
+<p align="center">
+  <img src="frontend/src/assets/sceenshots/homePage.png" width="900" title="hover text">
+  <br/>
+  <br/>
+
+  <img src="frontend/src/assets/sceenshots/pdfResume.png" width="900" title="hover text">
+  
+</p>
+
 <hr/>
 <br/>
 
@@ -29,6 +38,15 @@ click the search button, a request will be sent to the Django Backend. The respo
 be in the form of JSON object. After retrieving the response in a JSON file, we use
 the Definitions with the map function. 
 
+<p align="center">
+  <img src="frontend/src/assets/sceenshots/dictionaryPage.png" width="900" title="hover text">
+  <br/>
+  <br/>
+  
+  <img src="frontend/src/assets/sceenshots/wordSearch.png" width="900" title="hover text">
+  
+</p>
+
 <hr/>
 <br/>
 -- Finance Page --<br/>
@@ -38,6 +56,15 @@ and then click the convert button. The request is made to the Django Backend. Th
 result after convertion. At the bottom of the page is the list of stocks which is retrieved
 from the backend. The request is made to the backend and then the backend gets the parameters, and makes a call
 to the ready api.
+
+<p align="center">
+  <img src="frontend/src/assets/sceenshots/financePage.png" width="900" title="hover text">
+  <br/>
+  <br/>
+
+  <img src="frontend/src/assets/sceenshots/stockPage1.png" width="900" title="hover text">
+  
+</p>
 
 <br/>
 <hr/>
