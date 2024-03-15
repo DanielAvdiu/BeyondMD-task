@@ -30,6 +30,15 @@ views.py. The urls are defined in the urls.py file. The database that is used in
 the sqlite3 database. It is a lightweight database and easy to use. Everything else is explained
 by the comments in the code itself.
 
+<p align="center">
+  <img src="frontend/src/assets/sceenshots/financePage.png" width="900" title="hover text">
+  <br/>
+  <br/>
+
+  <img src="frontend/src/assets/sceenshots/stockPage.png" width="900" title="hover text">
+  
+</p>
+
 <hr/>
 <br/>
 -- Urban Dictionary --<br/>
