@@ -36,14 +36,6 @@ def DownloadPDF(self):
 
 # Create your views here.
 
-
-
-@api_view(['GET'])
-def say_hello(request):
-    cred = credentials.Certificate("path/to/serviceAccountKey.json")
-    firebase_admin.initialize_app(cred)
-    return JsonResponse({'message': 'Hello, Django!'})
-
 @api_view(['GET'])
 def find_free(request):
     query_params = request.GET
