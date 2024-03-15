@@ -62,7 +62,7 @@ to the ready api.
   <br/>
   <br/>
 
-  <img src="frontend/src/assets/sceenshots/stockPage.png" width="900" title="hover text">
+  <img src="frontend/src/assets/sceenshots/stockPage1.png" width="900" title="hover text">
   
 </p>
 
