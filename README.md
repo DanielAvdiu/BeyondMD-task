@@ -77,6 +77,15 @@ with a specific ID, once you click the 'delete' button, the ID of that note is s
 backend with a DELETE http request. After that the instance is deleted from the sqlite3 database in
 the django backend.
 
+<p align="center">
+  <img src="frontend/src/assets/sceenshots/notesPage.png" width="900" title="hover text">
+  <br/>
+  <br/>
+
+  <img src="frontend/src/assets/sceenshots/pdfResume.png" width="900" title="hover text">
+  
+</p>
+
 <br />
 <hr/>
 -- The PDF resume --<br/>
@@ -84,4 +93,8 @@ In the home page you can download my resume. Once the button is clicked
 the request is sent to the Django Backend. The django backend has the file in 
 one of the folders, and when it receives a request from the front-end, it returns
 the PDF resume as a blob file.
+
+<p align="center">
+  <img src="frontend/src/assets/sceenshots/pdfResume.png" width="900" title="hover text">  
+</p>
 
