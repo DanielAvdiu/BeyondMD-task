@@ -7,6 +7,10 @@ After that is the services list. You can select between the dictionary, notes
 and the finance page. In the Notes page you can keep notes and delete them
 in real time. 
 
+<p align="center">
+  <img src="frontend/src/assets/sceenshots/homePage.png" width="700" title="hover text">
+</p>
+
 <hr/>
 <br/>
 
