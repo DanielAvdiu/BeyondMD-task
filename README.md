@@ -8,7 +8,7 @@ and the finance page. In the Notes page you can keep notes and delete them
 in real time. 
 
 <p align="center">
-  <img src="frontend/src/assets/sceenshots/homePage.png" width="700" title="hover text">
+  <img src="frontend/src/assets/sceenshots/homePage.png" width="900" title="hover text">
 </p>
 
 <hr/>
