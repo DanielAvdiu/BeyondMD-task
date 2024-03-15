@@ -29,6 +29,10 @@ click the search button, a request will be sent to the Django Backend. The respo
 be in the form of JSON object. After retrieving the response in a JSON file, we use
 the Definitions with the map function. 
 
+<p align="center">
+  <img src="frontend/src/assets/sceenshots/homePage.png" width="350" title="hover text">
+</p>
+
 <hr/>
 <br/>
 -- Finance Page --<br/>
