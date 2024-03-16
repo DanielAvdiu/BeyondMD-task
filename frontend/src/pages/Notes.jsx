@@ -156,7 +156,7 @@ const Notes = () => {
                         */}
                         <div className="flex flex-col justify-start items-center w-screen">
                             <h1 className="font-bold text-xl">All the notes</h1>
-                            <div style={{ maxHeight: "900px" }} className="overflow-auto scrollbar-hide">
+                            <div style={{ maxHeight: "500px" }} className="overflow-auto scrollbar-hide">
                                 {notes.map(note => {
                                     return (
                                         <div className="font-bold w-96 flex-col">

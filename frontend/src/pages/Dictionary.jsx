@@ -26,8 +26,13 @@ const Dictionary = () => {
 
         const makeCall = async () => {
             await fetch(urlWithParams).then(response => response.json()).then(data => { setData(data); setListData(data['list']); console.log(data); console.log(listdata) });
-            document.getElementById("gif").classList.toggle("hidden");
-            document.getElementById("definitions").classList.toggle("hidden");
+
+            if (document.getElementById("gif").classList.contains("hidden")==false) {
+                document.getElementById("gif").classList.toggle("hidden");
+                document.getElementById("definitions").classList.toggle("hidden");
+            }
+            // document.getElementById("gif").classList.toggle("hidden");
+            // document.getElementById("definitions").classList.toggle("hidden");
         };
 
         makeCall();
