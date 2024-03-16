@@ -8,12 +8,11 @@ and the finance page. In the Notes page you can keep notes and delete them
 in real time. 
 
 <p align="center">
-  <img src="frontend/src/assets/sceenshots/homePage.png" width="900" title="hover text">
+  <img src="frontend/src/assets/sceenshots/homePage.png" width="800" title="hover text">
   <br/>
   <br/>
+  <img src="frontend/src/assets/sceenshots/pdfResume.png" width="800" title="hover text">
 
-  <img src="frontend/src/assets/sceenshots/pdfResume.png" width="900" title="hover text">
-  
 </p>
 
 <hr/>
@@ -39,11 +38,11 @@ be in the form of JSON object. After retrieving the response in a JSON file, we 
 the Definitions with the map function. 
 
 <p align="center">
-  <img src="frontend/src/assets/sceenshots/dictionaryPage.png" width="900" title="hover text">
+  <img src="frontend/src/assets/sceenshots/dictionaryPage.png" width="800" title="hover text">
   <br/>
   <br/>
   
-  <img src="frontend/src/assets/sceenshots/wordSearch.png" width="900" title="hover text">
+  <img src="frontend/src/assets/sceenshots/wordSearch.png" width="800" title="hover text">
   
 </p>
 
@@ -58,11 +57,11 @@ from the backend. The request is made to the backend and then the backend gets t
 to the ready api.
 
 <p align="center">
-  <img src="frontend/src/assets/sceenshots/financePage.png" width="900" title="hover text">
+  <img src="frontend/src/assets/sceenshots/financePage.png" width="800" title="hover text">
   <br/>
   <br/>
 
-  <img src="frontend/src/assets/sceenshots/stockPage1.png" width="900" title="hover text">
+  <img src="frontend/src/assets/sceenshots/stockPage1.png" width="800" title="hover text">
   
 </p>
 
@@ -77,6 +76,12 @@ with a specific ID, once you click the 'delete' button, the ID of that note is s
 backend with a DELETE http request. After that the instance is deleted from the sqlite3 database in
 the django backend.
 
+<p align="center">
+  <img src="frontend/src/assets/sceenshots/notesPage.png" width="800" title="hover text">
+  <br/>
+  <br/>
+</p>
+
 <br />
 <hr/>
 -- The PDF resume --<br/>
@@ -84,4 +89,8 @@ In the home page you can download my resume. Once the button is clicked
 the request is sent to the Django Backend. The django backend has the file in 
 one of the folders, and when it receives a request from the front-end, it returns
 the PDF resume as a blob file.
+
+<p align="center">
+  <img src="frontend/src/assets/sceenshots/pdfResume.png" width="800" title="hover text">  
+</p>
 
