@@ -2,10 +2,15 @@ FROM node:15.13-alpine
 
 WORKDIR /react
 
+EXPOSE 3000
+
 COPY package.json ./
 COPY package-lock.json ./
+
 RUN npm install
 
 COPY . .
 
 RUN npm run build
+
+CMD ["npm", "start"]
